@@ -1,0 +1,28 @@
+Tooltip_CN = {
+  /* Weapon */
+  Tooltip_ITE_improvised = "简易",
+  Tooltip_ITE_unknown = "未知",
+
+  Tooltip_ITE_crit="暴击",
+  Tooltip_ITE_break_chance="损耗几率",
+  Tooltip_ITE_break_chance_one_in="1/",
+  Tooltip_ITE_recoil_aim_reload="后坐力/聚焦/装填时间",
+
+  Tooltip_ITE_sound_radius="声音半径",
+  Tooltip_ITE_accuracy="精度",
+  Tooltip_ITE_knockback="击退",
+  Tooltip_ITE_attack_speed="攻速",
+  Tooltip_ITE_endurance_used="耐力消耗",
+  Tooltip_ITE_tiles="格",
+
+  /* Food */
+  Tooltip_ITE_spice="Can be used as spice.",
+
+  Tooltip_ITE_day="d",
+  Tooltip_ITE_hour="h",
+  Tooltip_ITE_minute="m",
+  Tooltip_ITE_in="in",
+  Tooltip_ITE_stale="Stale",
+  Tooltip_ITE_rotten="Rotten",
+  Tooltip_ITE_completely_rotten="Completely rotten.",
+}

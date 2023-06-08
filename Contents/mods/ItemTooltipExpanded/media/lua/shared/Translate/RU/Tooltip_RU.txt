@@ -1,0 +1,28 @@
+Tooltip_RU = {
+  /* Weapon */
+  Tooltip_ITE_improvised = "Импровизированный",
+  Tooltip_ITE_unknown = "Неизвестный",
+
+  Tooltip_ITE_crit="Крит. урон",
+  Tooltip_ITE_break_chance="Шанс поломки",
+  Tooltip_ITE_break_chance_one_in="1 из",
+  Tooltip_ITE_recoil_aim_reload="Разброс/Прицеливание/Время перезарядки",
+
+  Tooltip_ITE_sound_radius="Радиус слышимости",
+  Tooltip_ITE_accuracy="Точность",
+  Tooltip_ITE_knockback="Отталкивание",
+  Tooltip_ITE_attack_speed="Скорость атаки",
+  Tooltip_ITE_endurance_used="Использование выносливости",
+  Tooltip_ITE_tiles="метров",
+
+  /* Food */
+  Tooltip_ITE_spice="Can be used as spice.",
+
+  Tooltip_ITE_day="d",
+  Tooltip_ITE_hour="h",
+  Tooltip_ITE_minute="m",
+  Tooltip_ITE_in="in",
+  Tooltip_ITE_stale="Stale",
+  Tooltip_ITE_rotten="Rotten",
+  Tooltip_ITE_completely_rotten="Completely rotten.",
+}

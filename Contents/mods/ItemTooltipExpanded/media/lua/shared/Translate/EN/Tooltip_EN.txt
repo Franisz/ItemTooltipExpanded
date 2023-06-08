@@ -1,0 +1,28 @@
+Tooltip_EN = {
+  /* Weapon */
+  Tooltip_ITE_improvised = "Improvised",
+  Tooltip_ITE_unknown = "Unknown",
+
+  Tooltip_ITE_crit="Crit",
+  Tooltip_ITE_break_chance="Break chance",
+  Tooltip_ITE_break_chance_one_in="1 in",
+  Tooltip_ITE_recoil_aim_reload="Recoil/Aim/Reload time",
+
+  Tooltip_ITE_sound_radius="Sound radius",
+  Tooltip_ITE_accuracy="Accuracy",
+  Tooltip_ITE_knockback="Knockback",
+  Tooltip_ITE_attack_speed="Attack speed",
+  Tooltip_ITE_endurance_used="Endurance used",
+  Tooltip_ITE_tiles="tiles",
+
+  /* Food */
+  Tooltip_ITE_spice="Can be used as spice.",
+
+  Tooltip_ITE_day="d",
+  Tooltip_ITE_hour="h",
+  Tooltip_ITE_minute="m",
+  Tooltip_ITE_in="in",
+  Tooltip_ITE_stale="Stale",
+  Tooltip_ITE_rotten="Rotten",
+  Tooltip_ITE_completely_rotten="Completely rotten.",
+}

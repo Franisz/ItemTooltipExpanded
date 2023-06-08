@@ -1,0 +1,8 @@
+version=1
+id=2986485334
+title=Item Tooltip Expanded
+description=Mod expands on hover item tooltip.
+description=
+description=Source code on [url=https://github.com/Franisz/ItemTooltipExpanded]GitHub[/url]
+tags=Build 41;Interface;Items;Misc;Multiplayer
+visibility=unlisted
