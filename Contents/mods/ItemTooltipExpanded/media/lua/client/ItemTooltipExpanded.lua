@@ -17,6 +17,7 @@ ITE.swingSpeed = {
 }
 
 ITE.Lines = {}
+ITE.oldHeight = nil
 
 function ITE.addLine(text)
   table.insert(ITE.Lines, { ["Text"] = text })
@@ -194,6 +195,7 @@ function ITE.setY(self, y, ...)
 end
 
 function ITE.setHeight(self, height, ...)
+  ITE.oldHeight = height
   local newHeight = height + self.tooltip:getLineSpacing() * ITE.getAddedLinesCount()
 
   if not self.followMouse and self.anchorBottomLeft then
@@ -269,6 +271,12 @@ function ISToolTipInv:render()
     ITE.Lines[k]["Text"] = nil
     ITE.Lines[k]["Color"] = nil
     ITE.Lines[k] = nil
+  end
+
+  -- Reset height to avoid 1 frame flicker
+  if ITE.oldHeight ~= nil then
+    ITE.ISToolTipInv.setHeight(self, ITE.oldHeight)
+    ITE.oldHeight = nil
   end
 end
 
