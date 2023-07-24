@@ -202,6 +202,10 @@ function ITE.setHeight(self, height, ...)
     self.tooltip:setY(self.anchorBottomLeft.y - newHeight)
   end
 
+  if self.tooltip:getY() + newHeight >= getCore():getScreenHeight() then
+    self.tooltip:setY(getCore():getScreenHeight() - newHeight - 1)
+  end
+
   return ITE.ISToolTipInv.setHeight(self, newHeight, ...)
 end
 
