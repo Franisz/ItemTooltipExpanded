@@ -4,6 +4,7 @@ local ITE = {}
 
 ITE.ISToolTipInv = {}
 ITE.ISToolTipInv.render = ISToolTipInv.render
+ITE.ISToolTipInv.setY = ISToolTipInv.setY
 ITE.ISToolTipInv.setWidth = ISToolTipInv.setWidth
 ITE.ISToolTipInv.setHeight = ISToolTipInv.setHeight
 ITE.ISToolTipInv.drawRectBorder = ISToolTipInv.drawRectBorder
@@ -23,6 +24,13 @@ end
 
 function ITE.addLine(text, color)
   table.insert(ITE.Lines, { ["Text"] = text, ["Color"] = color })
+end
+
+function ITE.getAddedLinesCount()
+  local count = 0
+  for i = 1, #ITE.Lines do count = count + 1 end
+  if count > 0 then count = count + 1 end
+  return count
 end
 
 function ITE.assignTextWeapon(item, scriptItem)
@@ -176,11 +184,23 @@ function ITE.round(num, numDecimalPlaces)
   return math.floor(num * mult + 0.5) / mult
 end
 
+function ITE.setY(self, y, ...)
+  if not self.followMouse and self.anchorBottomLeft then
+    local newHeight = self.tooltip:getHeight() + self.tooltip:getLineSpacing() * ITE.getAddedLinesCount()
+    y = self.anchorBottomLeft.y - newHeight
+  end
+
+  return ITE.ISToolTipInv.setY(self, y, ...)
+end
+
 function ITE.setHeight(self, height, ...)
-  local count = 0
-  for i = 1, #ITE.Lines do count = count + 1 end
-  if count > 0 then count = count + 1 end
-  return ITE.ISToolTipInv.setHeight(self, height + self.tooltip:getLineSpacing() * count, ...)
+  local newHeight = height + self.tooltip:getLineSpacing() * ITE.getAddedLinesCount()
+
+  if not self.followMouse and self.anchorBottomLeft then
+    self.tooltip:setY(self.anchorBottomLeft.y - newHeight)
+  end
+
+  return ITE.ISToolTipInv.setHeight(self, newHeight, ...)
 end
 
 function ITE.setWidth(self, width, ...)
@@ -235,10 +255,12 @@ function ISToolTipInv:render()
     return ITE.ISToolTipInv.render(self)
   end
 
+  self.setY = ITE.setY
   self.setWidth = ITE.setWidth
   self.setHeight = ITE.setHeight
   self.drawRectBorder = ITE.drawRectBorder
   ITE.ISToolTipInv.render(self)
+  self.setY = ITE.ISToolTipInv.setY
   self.setWidth = ITE.ISToolTipInv.setWidth
   self.setHeight = ITE.ISToolTipInv.setHeight
   self.drawRectBorder = ITE.ISToolTipInv.drawRectBorder
