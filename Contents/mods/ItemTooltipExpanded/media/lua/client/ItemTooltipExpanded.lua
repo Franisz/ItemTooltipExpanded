@@ -80,9 +80,9 @@ function ITE.assignTextWeapon(item, scriptItem)
   if item:isRanged() then
     ITE.addLine(getText("Tooltip_weapon_Type")..": "..weaponTypeName.." ("..ScriptManager.instance:getItem(item:getAmmoType()):getDisplayName()..")")
     ITE.addLine(getText("Tooltip_weapon_Damage")..": "..ITE.round(item:getMinDamage(), 3).." - "..ITE.round(item:getMaxDamage(), 3).." (x1)")
-    ITE.addLine(getText("Tooltip_weapon_Range")..": "..ITE.round(item:getMinRangeRanged(), 3).." - "..ITE.round(item:getMaxRange(), 3).." (+"..item:getAimingPerkRangeModifier() * weaponLevel..")")
-    ITE.addLine(getText("Tooltip_ITE_crit")..": "..ITE.round(item:getCriticalChance(), 3).."% (+"..item:getAimingPerkCritModifier() * weaponLevel.."%), "..ITE.round(item:getCritDmgMultiplier(), 3).."x")
-    ITE.addLine(getText("Tooltip_ITE_accuracy")..": "..item:getHitChance().."% (+"..item:getAimingPerkHitChanceModifier() * weaponLevel.."%)")
+    ITE.addLine(getText("Tooltip_weapon_Range")..": "..ITE.round(item:getMinRangeRanged(), 3).." - "..ITE.round(item:getMaxRange(), 3).." (+"..ITE.round(item:getAimingPerkRangeModifier() * weaponLevel, 3)..")")
+    ITE.addLine(getText("Tooltip_ITE_crit")..": "..ITE.round(item:getCriticalChance(), 3).."% (+"..ITE.round(item:getAimingPerkCritModifier() * weaponLevel, 3).."%), "..ITE.round(item:getCritDmgMultiplier(), 3).."x")
+    ITE.addLine(getText("Tooltip_ITE_accuracy")..": "..item:getHitChance().."% (+"..ITE.round(item:getAimingPerkHitChanceModifier() * weaponLevel, 3).."%)")
     ITE.addLine(getText("Tooltip_ITE_recoil_aim_reload")..": "..item:getAimingTime().."/"..item:getReloadTime().."/"..item:getRecoilDelay())
     ITE.addLine(getText("Tooltip_ITE_sound_radius")..": "..item:getSoundRadius().." "..getText("Tooltip_ITE_tiles"))
   else
@@ -112,9 +112,9 @@ function ITE.assignTextWeapon(item, scriptItem)
       bonusSpeed = bonusSpeed + 25
     end
     bonusSpeed = bonusSpeed + player:getPerkLevel(Perks.Fitness) * 2 + weaponLevel * 3
-    ITE.addLine(getText("Tooltip_ITE_attack_speed")..": "..ITE.round(speed, 3).." (+"..bonusSpeed.."%)")
+    ITE.addLine(getText("Tooltip_ITE_attack_speed")..": "..ITE.round(speed, 3).." (+"..ITE.round(bonusSpeed, 3).."%)")
     local bonusKnockback = -25 + 5 * player:getPerkLevel(Perks.Strength)
-    ITE.addLine(getText("Tooltip_ITE_knockback")..": "..ITE.round(item:getPushBackMod(), 3).." (+"..bonusKnockback.."%)")
+    ITE.addLine(getText("Tooltip_ITE_knockback")..": "..ITE.round(item:getPushBackMod(), 3).." (+"..ITE.round(bonusKnockback, 3).."%)")
     ITE.addLine(getText("Tooltip_weapon_Range")..": "..ITE.round(item:getMinRange(), 3).." - "..ITE.round(item:getMaxRange(), 3))
     ITE.addLine(getText("Tooltip_ITE_crit")..": "..ITE.round(item:getCriticalChance(), 3).."% (+"..3 * weaponLevel.."%), x"..ITE.round(item:getCritDmgMultiplier(), 3))
     ITE.addLine(getText("Tooltip_ITE_endurance_used")..": x"..ITE.round(item:getEnduranceMod(), 3))
